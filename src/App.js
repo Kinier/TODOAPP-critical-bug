@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
+// import userApi from '../src/api/userApi'
+
 import './App.css';
+import TodosContext from './components/TodosContext'
+
+import Popup from './components/Popup';
+import AddCircle from './components/AddCircle';
+
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+
+import TodosList from './components/TodosList';
 
 function App() {
+  
+  const [todosDeleteMode, setTodosDeleteMode] = useState(false);
+  const [isActivePopup, setIsActivePopup] = useState(false)
+
+  const [todoObject, setTodoObject] = useState({title: "title", text: "Text", action: null})
+  let listBuf = [];
+  if (typeof localStorage?.key('todos') === "string"){ // if first time on the site or smth like this
+    listBuf = JSON.parse(localStorage.getItem('todos'));
+  }
+  const [todos, setTodos] = useState(listBuf)
+ 
+
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodosContext.Provider value={
+              [todosDeleteMode, setTodosDeleteMode, todos, setTodos, isActivePopup, setIsActivePopup, todoObject, setTodoObject]
+        } >
+        <Popup />
+        <AddCircle/>
+        
+
+        <Header />
+ 
+        <TodosList />
+    
+        <Footer/>
+
+
+      </TodosContext.Provider>
     </div>
   );
 }
-
 export default App;
