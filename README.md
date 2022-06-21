@@ -1,3 +1,10 @@
+# whaaaaaaaaaaaaaaaat 
+Editing is not working well( working, but not well ). Create and delete r fine.
+U can mass delete by pressing button in the left high corner, then choose all
+todos and press the same button again.
+
+# IT IS NOT FINAL ( or not actually all that i wanted to do )
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

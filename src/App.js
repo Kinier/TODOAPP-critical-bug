@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 // import userApi from '../src/api/userApi'
 
 import './App.css';
@@ -18,11 +18,15 @@ function App() {
   const [isActivePopup, setIsActivePopup] = useState(false)
 
   const [todoObject, setTodoObject] = useState({title: "title", text: "Text", action: null})
+
+
   let listBuf = [];
   if (typeof localStorage?.key('todos') === "string"){ // if first time on the site or smth like this
     listBuf = JSON.parse(localStorage.getItem('todos'));
   }
   const [todos, setTodos] = useState(listBuf)
+
+  
  
 
   
