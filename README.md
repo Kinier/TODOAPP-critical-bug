@@ -3,6 +3,8 @@ Editing is not working well( working, but not well ). Create and delete r fine.
 U can mass delete by pressing button in the left high corner, then choose all
 todos and press the same button again.
 
+***НАЗВАНИЯ СТИЛЕЙ ОБЯЗАТЕЛЬНО ПОФИКШУ, ОБЯЗАТЕЛЬНО, БЭМ ИЛИ КАК ТАМ ЕГО ЕПТА***
+
 # IT IS NOT FINAL ( or not actually all that i wanted to do )
 
 # Getting Started with Create React App
